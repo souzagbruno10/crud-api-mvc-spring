@@ -74,6 +74,12 @@ public class StudentController {
         return "redirect:/students/list"; // Corrigindo o redirecionamento para o caminho correto
     }
 
+    @PostMapping("/delete")
+    public String deleteStudent (@RequestParam("studentId") Long id){
+      studentService.deleteStudent(id);
+      return "redirect:/students/list";
+    }
+
     }
 
 
